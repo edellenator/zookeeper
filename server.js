@@ -19,13 +19,13 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+// designate location for static front end elements
+app.use(express.static('public'));
 
 app.use('/api', apiRoutes);
 
 app.use('/', htmlRoutes);
 
-// designate location for static front end elements
-app.use(express.static('public'));
 
 
 

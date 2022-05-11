@@ -7,6 +7,9 @@ const {
 } = require("../lib/animals.js");
 
 const { animals } = require("../data/animals");
+const { JestHook } = require("jest-watcher");
+
+jest.mock('fs');
 
 test("creates an animal object", () => {
   const animal = createNewAnimal(
